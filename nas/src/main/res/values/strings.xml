@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="minseo_nas_label_host">NAS 주소 (DDNS 또는 공인 IP)</string>
+    <string name="minseo_nas_label_port">포트</string>
+    <string name="minseo_nas_label_lan_host">LAN 주소 (같은 네트워크 우선 시도, 비워두면 생략)</string>
+    <string name="minseo_nas_label_lan_port">LAN 포트</string>
+    <string name="minseo_nas_label_user">사용자 이름</string>
+    <string name="minseo_nas_label_pass">비밀번호</string>
+    <string name="minseo_nas_label_path">데이터 경로</string>
+
+    <string name="minseo_nas_hint_host">예: my.ddns.net</string>
+    <string name="minseo_nas_hint_port">5000</string>
+    <string name="minseo_nas_hint_lan_host">예: 192.168.0.10</string>
+    <string name="minseo_nas_hint_lan_port">5000</string>
+    <string name="minseo_nas_hint_user">DSM 계정</string>
+    <string name="minseo_nas_hint_pass">비밀번호</string>
+    <string name="minseo_nas_hint_path">/web/.minseo/</string>
+</resources>

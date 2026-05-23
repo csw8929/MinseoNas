@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout"
+    tools:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_host"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_host"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:hint="@string/minseo_nas_hint_host"
+        android:autofillHints="off"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_port"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_port"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/minseo_nas_hint_port"
+        android:autofillHints="off"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_lan_host"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_lan_host"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:hint="@string/minseo_nas_hint_lan_host"
+        android:autofillHints="off"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_lan_port"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_lan_port"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/minseo_nas_hint_lan_port"
+        android:autofillHints="off"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_user"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/minseo_nas_hint_user"
+        android:autofillHints="username"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_pass"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/minseo_nas_hint_pass"
+        android:autofillHints="password"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/minseo_nas_label_path"
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <EditText
+        android:id="@+id/minseo_nas_et_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/minseo_nas_hint_path"
+        android:autofillHints="off"
+        android:layout_marginBottom="12dp" />
+
+</merge>

@@ -26,8 +26,8 @@ public final class DsAuth {
     private static final AtomicBoolean networkMonitorStarted = new AtomicBoolean(false);
     private static volatile Network lastKnownNetwork = null;
 
-    static final ExecutorService executor = Executors.newSingleThreadExecutor();
-    static final Handler mainHandler = new Handler(Looper.getMainLooper());
+    public static final ExecutorService executor = Executors.newSingleThreadExecutor();
+    public static final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     // ── 런타임 인증 정보 (init()에서 주입) ─────────────────────────────────────
     public static volatile String cfgBaseUrl  = "";
@@ -38,6 +38,12 @@ public final class DsAuth {
     public static volatile String cfgPosDir   = "/";
 
     private DsAuth() {}
+
+    /** {@link NasCredentials} 받는 편의 오버로드. */
+    public static void init(NasCredentials creds) {
+        init(creds.getBaseUrl(), creds.getLanUrl(), creds.getUser(), creds.getPass(),
+             creds.getBasePath(), creds.getPosDir());
+    }
 
     /** NAS 인증 정보 적용. cachedSid/resolvedBase 캐시 무효화. */
     public static void init(String baseUrl, String lanUrl, String user, String pass,

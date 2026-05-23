@@ -22,19 +22,19 @@ import javax.net.ssl.X509TrustManager;
  * HTTP 저수준 유틸리티. 쿠키 수집 + 수동 리다이렉트 추적 + 자체 서명 TLS 허용.
  * 상태 없음(stateless). DSM FileStation API 와 무관 — Synology 외 NAS 도 재사용 가능.
  */
-final class DsHttp {
+public final class DsHttp {
     private static final String TAG = "NAS";
-    static final int CONNECT_TIMEOUT = 10_000;
-    static final int READ_TIMEOUT    = 15_000;
+    public static final int CONNECT_TIMEOUT = 10_000;
+    public static final int READ_TIMEOUT    = 15_000;
 
-    static final String BROWSER_UA =
+    public static final String BROWSER_UA =
             "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 "
             + "(KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36";
 
     private DsHttp() {}
 
     /** GET. 최대 5회 수동 리다이렉트, 쿠키 누적 전달. */
-    static String httpGet(String urlStr) throws Exception {
+    public static String httpGet(String urlStr) throws Exception {
         String currentUrl = urlStr;
         StringBuilder cookieHeader = new StringBuilder();
         for (int redirect = 0; redirect < 5; redirect++) {
@@ -89,7 +89,7 @@ final class DsHttp {
     }
 
     /** URL이 실제로 DSM API를 서비스하는지 빠르게 확인 (3초 타임아웃). JSON 응답 확인. */
-    static boolean probeUrl(String baseUrl) {
+    public static boolean probeUrl(String baseUrl) {
         try {
             String probe = baseUrl + "/webapi/auth.cgi?api=SYNO.API.Info&version=1&method=query&query=SYNO.API.Auth";
             HttpURLConnection conn = openTrustedConnection(probe);
@@ -126,7 +126,7 @@ final class DsHttp {
     }
 
     /** SSL 인증서 검증 없이 연결 (NAS 자체 서명 인증서 대응). */
-    static HttpURLConnection openTrustedConnection(String urlStr) throws Exception {
+    public static HttpURLConnection openTrustedConnection(String urlStr) throws Exception {
         URL url = new URL(urlStr);
         if (!url.getProtocol().equals("https")) {
             return (HttpURLConnection) url.openConnection();
@@ -156,7 +156,7 @@ final class DsHttp {
      * @param content 파일 내용
      * @param sid FileStation SID
      */
-    static String uploadFile(String urlStr, String destFolder, String filename,
+    public static String uploadFile(String urlStr, String destFolder, String filename,
                              byte[] content, String sid) throws Exception {
         String boundary = "----MinseoNasBoundary" + System.currentTimeMillis();
         HttpURLConnection conn = openTrustedConnection(urlStr);

@@ -29,12 +29,16 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.csw8929.minseo"
             artifactId = "nas"
-            version = "0.1.0"
+            version = "0.2.0"
             afterEvaluate { from(components["release"]) }
         }
     }
 }
 
 dependencies {
+    implementation(libs.appcompat)
+    // security-crypto는 EncryptedPrefsCredentials 만 쓰는 클래스 — 사용 앱이 implementation으로 추가해야 함.
+    compileOnly(libs.security.crypto)
+
     testImplementation(libs.junit)
 }
